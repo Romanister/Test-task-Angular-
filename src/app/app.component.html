@@ -1,0 +1,44 @@
+<div class="flex justify-center items-center flex-col gap-6 m-5">
+  <div class="flex w-full h-12 justify-center items-center
+  gap-10">
+    <button class="border-solid border-black border rounded w-1/12 h-8 text-lg focus:bg-gray-300" [routerLink]="['navigate']"
+      [queryParams]="{tab: 0}">
+      Income
+    </button>
+    <button class="border-solid border-black border rounded w-1/12 h-8 text-lg focus:bg-gray-300" [routerLink]="['navigate']"
+      [queryParams]="{tab: 1}">
+      Outcome
+    </button>
+    <button class="border-solid border-black border rounded w-1/12 h-8 text-lg focus:bg-gray-300" [routerLink]="['navigate']"
+      [queryParams]="{tab: 2}">
+      Loans
+    </button>
+    <button class="border-solid border-black border rounded w-1/12 h-8 text-lg focus:bg-gray-300" [routerLink]="['navigate']"
+      [queryParams]="{tab: 3}">
+      Investments
+    </button>
+  </div>
+  <div class="flex w-2/5 flex border-solid border border-black rounded-lg flex-col items-center">
+    <div class="flex-row flex gap-80 m-5 ">
+      <h1 class=" flex w-20 text-center">
+        Account №
+      </h1>
+      <h1 class=" w-20 text-center">
+        Name
+      </h1>
+    </div>
+    <div [(ngModel)]="transactions" ngDefaultControl>
+      <div *ngFor=" let data of transactions" class="flex-row flex gap-80 justify-center items-center border-b">
+        <div class="m-1 w-20 text-center mb-2">
+          {{Random()}}
+        </div>
+        <div class="m-1 w-20 text-center mb-2">
+          {{data.name.first}}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
